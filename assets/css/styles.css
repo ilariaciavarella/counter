@@ -1,3 +1,10 @@
+:root {
+	--blue: #2fb6b2;
+	--red: #d91254;
+	--lgray: #f0f5f5;
+	--dgray: #1c1719;
+}
+
 *,
 *::after,
 *::before {
@@ -9,9 +16,9 @@
 }
 
 body {
-	background-color: #1c1719;
+	background-color: var(--dgray);
 	color: white;
-	padding: 8rem;
+	padding: 8rem 2rem;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
@@ -19,12 +26,14 @@ body {
 
 .instructions {
 	position: absolute;
-	top: 3rem;
-	right: 3rem;
+	top: 2rem;
+	right: 1.7rem;
 	width: 3rem;
 }
 
 main {
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -32,5 +41,57 @@ main {
 }
 
 .numbers {
-	font-size: 10rem;
+	width: 100%;
+	font-size: calc(10rem - 48px);
+	background-color: rgba(217, 18, 84, 0.3);
+	border: 5px solid var(--lgray);
+	border-radius: 24px;
+	padding: 24px 48px;
+	margin-bottom: 48px;
+	text-align: center;
+}
+
+.buttons {
+	width: 100%;
+	max-height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 32px;
+}
+
+.buttons button {
+	background-color: var(--blue);
+	border: none;
+	border-radius: 8px;
+	width: 100%;
+	padding: 24px;
+	font-size: 2rem;
+	box-shadow: var(--lgray) 8px 8px 0;
+	color: white;
+	font-weight: 500;
+}
+
+#reset {
+	text-transform: uppercase;
+	grid-column: 1 / -1;
+	background-color: var(--red);
+}
+
+/* MOBILE */
+@media only screen and (max-width: 400px) {
+	.numbers {
+		font-size: calc(6rem - 24px);
+	}
+
+	.buttons {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media only screen and (min-width: 401px) {
+	main {
+		max-width: 28rem;
+		margin: auto;
+	}
 }
