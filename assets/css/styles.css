@@ -3,6 +3,12 @@
 	--red: #d91254;
 	--lgray: #f0f5f5;
 	--dgray: #1c1719;
+
+	--hov-blue: #22827f;
+	--hov-red: #a60e40;
+
+	--click-blue: #144f4d;
+	--click-red: #8c0c36;
 }
 
 *,
@@ -72,10 +78,31 @@ main {
 	font-weight: 500;
 }
 
+.buttons button:hover {
+	background-color: var(--hov-blue);
+	cursor: pointer;
+	transition: 100ms ease-in-out;
+}
+
+.buttons button:active {
+	background-color: var(--click-blue);
+	transform: translate(8px, 8px);
+	box-shadow: none;
+	transition: 100ms ease-in-out;
+}
+
 #reset {
 	text-transform: uppercase;
 	grid-column: 1 / -1;
 	background-color: var(--red);
+}
+
+#reset:hover {
+	background-color: var(--hov-red);
+}
+
+#reset:active {
+	background-color: var(--click-red);
 }
 
 /* MOBILE */
