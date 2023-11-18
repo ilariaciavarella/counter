@@ -26,8 +26,7 @@ body {
 	color: white;
 	padding: 8rem 2rem;
 	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
+	min-height: 100vh;
 }
 
 .instrIcon {
@@ -72,10 +71,6 @@ body {
 main {
 	width: 100%;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
 }
 
 .numbers {
@@ -85,8 +80,10 @@ main {
 	border: 5px solid var(--lgray);
 	border-radius: 24px;
 	padding: 24px 48px;
-	margin-bottom: 48px;
+	margin-bottom: 96px;
 	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .buttons {
@@ -151,10 +148,6 @@ main {
 @media only screen and (max-width: 400px) {
 	.numbers {
 		font-size: calc(6rem - 24px);
-	}
-
-	.buttons {
-		grid-template-columns: 1fr;
 	}
 
 	.instructions {
