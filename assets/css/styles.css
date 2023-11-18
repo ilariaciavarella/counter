@@ -162,9 +162,3 @@ main {
 		margin: auto;
 	}
 }
-
-@media only screen and (hover: none) {
-	.instrIcon {
-		display: none;
-	}
-}

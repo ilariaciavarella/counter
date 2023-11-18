@@ -141,6 +141,10 @@ let instructions = document.querySelector('.instructions');
 
 let overlay = document.createElement('div');
 
+if (!isTouchDevice()) {
+    instrIcon.classList.add('display');
+}
+
 instrIcon.addEventListener('mouseenter', () => {
     instructions.classList.add('display');
     overlay.classList.add('overlay');
