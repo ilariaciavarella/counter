@@ -15,7 +15,6 @@ function createBtn(text, attr, attrValue, node) {
     elem = document.createElement('button');
     elem.setAttribute(attr, attrValue);
     elem.textContent = text;
-    node.append(elem);
     return elem;
 }
 
@@ -65,27 +64,18 @@ function reset() {
 
 
 // CREATE BUTTONS
-let plusBtn = createBtn('+', 'id', 'plus', btnContainer);
-let minusBtn = createBtn('-', 'id', 'minus', btnContainer);
-let plusTenBtn;
-let minusTenBtn;
+let plusBtn = createBtn('+', 'id', 'plus');
+let minusBtn = createBtn('-', 'id', 'minus');
+let resetBtn = createBtn('Reset', 'id', 'reset');
+
+btnContainer.append(plusBtn, minusBtn, resetBtn);
+
+let plusTenBtn = createBtn('+10', 'id', 'plusTen');
+let minusTenBtn = createBtn('-10', 'id', 'minusTen');
 
 if (isTouchDevice()) {
-    plusTenBtn = createBtn('+10', 'id', 'plusTen', btnContainer);
-    minusTenBtn = createBtn('-10', 'id', 'minusTen', btnContainer);
-
-    plusTenBtn.addEventListener('click', () => {
-        e.preventDefault();
-        addTen();
-    })
-
-    minusTenBtn.addEventListener('click', () => {
-        e.preventDefault();
-        subtractTen();
-    })
+    resetBtn.before(plusTenBtn, minusTenBtn);
 }
-
-let resetBtn = createBtn('Reset', 'id', 'reset', btnContainer);
 
 //DEFINE DISPLAY NUMBER
 let count = 0;
@@ -111,6 +101,16 @@ minusBtn.addEventListener('click', (e) => {
 resetBtn.addEventListener('click', (e) => {
     e.preventDefault();
     reset();
+})
+
+plusTenBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    addTen();
+})
+
+minusTenBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    subtractTen();
 })
 
 //use keyboard
