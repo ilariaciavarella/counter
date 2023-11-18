@@ -108,7 +108,7 @@ minusBtn.addEventListener('click', (e) => {
     }
 })
 
-resetBtn.addEventListener('click', () => {
+resetBtn.addEventListener('click', (e) => {
     e.preventDefault();
     reset();
 })
