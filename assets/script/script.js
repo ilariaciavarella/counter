@@ -2,7 +2,8 @@
 let numDisplay = document.querySelector('.numbers');
 let btnContainer = document.querySelector('.buttons');
 
-// CREATE AND ADD BUTTONS
+// FUNCTIONS
+// create and add buttons
 function createBtn(text, attr, attrValue, node) {
     elem = document.createElement('button');
     elem.setAttribute(attr, attrValue);
@@ -11,6 +12,52 @@ function createBtn(text, attr, attrValue, node) {
     return elem;
 }
 
+//calculations
+function add() {
+    if (count + 1 < 1000) {
+        count++;
+        updateDisplay();
+    }
+}
+
+function subtract() {
+    if (count - 1 >= 0) {
+        count--;
+        updateDisplay();
+    }
+}
+
+function addTen() {
+    if (count + 10 < 1000) {
+        count += 10;
+    } else {
+        count = 999;
+    }
+    updateDisplay();
+}
+
+function subtractTen() {
+    if (count - 10 >= 0) {
+        count -= 10;
+    } else {
+        count = 0;
+    }
+    updateDisplay();
+}
+
+//update display
+function updateDisplay() {
+    numDisplay.textContent = count.toLocaleString('en-US', { minimumIntegerDigits: 3, useGrouping: false });
+}
+
+//reset
+function reset() {
+    count = 0;
+    updateDisplay();
+}
+
+
+// CREATE BUTTONS
 let plusBtn = createBtn('+', 'id', 'plus', btnContainer);
 let minusBtn = createBtn('-', 'id', 'minus', btnContainer);
 let plusTenBtn = createBtn('+10', 'id', 'plusTen', btnContainer);
@@ -18,26 +65,47 @@ let minusTenBtn = createBtn('-10', 'id', 'minusTen', btnContainer);
 
 let resetBtn = createBtn('Reset', 'id', 'reset', btnContainer);
 
+//DEFINE DISPLAY NUMBER
+let count = 0;
+
 plusBtn.addEventListener('click', () => {
-    currentNum++;
-    numDisplay.textContent = currentNum;
+    add();
 })
 
 plusTenBtn.addEventListener('click', () => {
-    currentNum += 100;
-    numDisplay.textContent = currentNum;
+    addTen();
 })
 
 minusBtn.addEventListener('click', () => {
-    currentNum--;
-    numDisplay.textContent = currentNum;
+    subtract();
 })
 
 minusTenBtn.addEventListener('click', () => {
-    currentNum -= 10;
-    numDisplay.textContent = currentNum;
+    subtractTen();
 })
 
 resetBtn.addEventListener('click', () => {
-    numDisplay.textContent = '000';
+    reset();
+})
+
+//use keyboard
+document.addEventListener('keydown', (e) => {
+    // add or subtract
+    if (e.key == '+' || e.key == "ArrowUp") {
+        if (e.shiftKey) {
+            addTen();
+        } else {
+            add();
+        }
+    } else if (e.key == '-' || e.key == "ArrowDown") {
+        if (e.shiftKey) {
+            subtractTen();
+        } else {
+            subtract();
+        }
+    }
+
+    if (e.key == "Backspace") {
+        reset();
+    }
 })
