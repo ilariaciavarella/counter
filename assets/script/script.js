@@ -75,10 +75,12 @@ if (isTouchDevice()) {
     minusTenBtn = createBtn('-10', 'id', 'minusTen', btnContainer);
 
     plusTenBtn.addEventListener('click', () => {
+        e.preventDefault();
         addTen();
     })
 
     minusTenBtn.addEventListener('click', () => {
+        e.preventDefault();
         subtractTen();
     })
 }
@@ -89,6 +91,7 @@ let resetBtn = createBtn('Reset', 'id', 'reset', btnContainer);
 let count = 0;
 
 plusBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     if (e.shiftKey) {
         addTen();
     } else {
@@ -97,6 +100,7 @@ plusBtn.addEventListener('click', (e) => {
 })
 
 minusBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     if (e.shiftKey) {
         subtractTen();
     } else {
@@ -105,6 +109,7 @@ minusBtn.addEventListener('click', (e) => {
 })
 
 resetBtn.addEventListener('click', () => {
+    e.preventDefault();
     reset();
 })
 
@@ -145,4 +150,8 @@ instrIcon.addEventListener('mouseenter', () => {
 instrIcon.addEventListener('mouseleave', () => {
     instructions.classList.remove('display');
     document.querySelector('body').removeChild(overlay);
+})
+
+window.addEventListener('dblclick', (e) => {
+    e.preventDefault();
 })
