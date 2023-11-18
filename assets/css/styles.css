@@ -30,11 +30,43 @@ body {
 	overflow: hidden;
 }
 
-.instructions {
+.instrIcon {
 	position: absolute;
 	top: 2rem;
 	right: 1.7rem;
 	width: 3rem;
+	z-index: 10;
+}
+
+.instructions {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--dgray);
+	width: 50vw;
+	padding: 2rem;
+	border-radius: 8px;
+	border: 2px solid var(--lgray);
+	z-index: 10;
+
+	display: none;
+}
+
+.display {
+	display: block;
+}
+
+.instructions li {
+	margin-left: 1rem;
+}
+
+.instructions > * {
+	margin-bottom: 0.6rem;
+}
+
+.instructions p:last-child {
+	margin-bottom: 0;
 }
 
 main {
@@ -62,7 +94,6 @@ main {
 	max-height: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
 	gap: 32px;
 }
 
@@ -105,6 +136,17 @@ main {
 	background-color: var(--click-red);
 }
 
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--red);
+	opacity: 0.75;
+	z-index: 0;
+}
+
 /* MOBILE */
 @media only screen and (max-width: 400px) {
 	.numbers {
@@ -114,11 +156,21 @@ main {
 	.buttons {
 		grid-template-columns: 1fr;
 	}
+
+	.instructions {
+		width: 80vw;
+	}
 }
 
 @media only screen and (min-width: 401px) {
 	main {
 		max-width: 28rem;
 		margin: auto;
+	}
+}
+
+@media only screen and (hover: none) {
+	.instrIcon {
+		display: none;
 	}
 }

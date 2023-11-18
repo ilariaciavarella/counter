@@ -3,6 +3,13 @@ let numDisplay = document.querySelector('.numbers');
 let btnContainer = document.querySelector('.buttons');
 
 // FUNCTIONS
+// detect touch device
+function isTouchDevice() {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+}
+
 // create and add buttons
 function createBtn(text, attr, attrValue, node) {
     elem = document.createElement('button');
@@ -60,28 +67,41 @@ function reset() {
 // CREATE BUTTONS
 let plusBtn = createBtn('+', 'id', 'plus', btnContainer);
 let minusBtn = createBtn('-', 'id', 'minus', btnContainer);
-let plusTenBtn = createBtn('+10', 'id', 'plusTen', btnContainer);
-let minusTenBtn = createBtn('-10', 'id', 'minusTen', btnContainer);
+let plusTenBtn;
+let minusTenBtn;
+
+if (isTouchDevice()) {
+    plusTenBtn = createBtn('+10', 'id', 'plusTen', btnContainer);
+    minusTenBtn = createBtn('-10', 'id', 'minusTen', btnContainer);
+
+    plusTenBtn.addEventListener('click', () => {
+        addTen();
+    })
+
+    minusTenBtn.addEventListener('click', () => {
+        subtractTen();
+    })
+}
 
 let resetBtn = createBtn('Reset', 'id', 'reset', btnContainer);
 
 //DEFINE DISPLAY NUMBER
 let count = 0;
 
-plusBtn.addEventListener('click', () => {
-    add();
+plusBtn.addEventListener('click', (e) => {
+    if (e.shiftKey) {
+        addTen();
+    } else {
+        add();
+    }
 })
 
-plusTenBtn.addEventListener('click', () => {
-    addTen();
-})
-
-minusBtn.addEventListener('click', () => {
-    subtract();
-})
-
-minusTenBtn.addEventListener('click', () => {
-    subtractTen();
+minusBtn.addEventListener('click', (e) => {
+    if (e.shiftKey) {
+        subtractTen();
+    } else {
+        subtract();
+    }
 })
 
 resetBtn.addEventListener('click', () => {
@@ -108,4 +128,21 @@ document.addEventListener('keydown', (e) => {
     if (e.key == "Backspace") {
         reset();
     }
+})
+
+//INSTRUCTIONS
+let instrIcon = document.querySelector('.instrIcon');
+let instructions = document.querySelector('.instructions');
+
+let overlay = document.createElement('div');
+
+instrIcon.addEventListener('mouseenter', () => {
+    instructions.classList.add('display');
+    overlay.classList.add('overlay');
+    document.querySelector('body').append(overlay);
+})
+
+instrIcon.addEventListener('mouseleave', () => {
+    instructions.classList.remove('display');
+    document.querySelector('body').removeChild(overlay);
 })
