@@ -11,7 +11,7 @@ function isTouchDevice() {
 }
 
 // create and add buttons
-function createBtn(text, attr, attrValue, node) {
+function createBtn(text, attr, attrValue) {
     elem = document.createElement('button');
     elem.setAttribute(attr, attrValue);
     elem.textContent = text;
@@ -81,7 +81,6 @@ if (isTouchDevice()) {
 let count = 0;
 
 plusBtn.addEventListener('click', (e) => {
-    e.preventDefault();
     if (e.shiftKey) {
         addTen();
     } else {
@@ -90,7 +89,6 @@ plusBtn.addEventListener('click', (e) => {
 })
 
 minusBtn.addEventListener('click', (e) => {
-    e.preventDefault();
     if (e.shiftKey) {
         subtractTen();
     } else {
@@ -98,22 +96,20 @@ minusBtn.addEventListener('click', (e) => {
     }
 })
 
-resetBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+resetBtn.addEventListener('click', () => {
     reset();
 })
 
-plusTenBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+// mobile only buttons
+plusTenBtn.addEventListener('click', () => {
     addTen();
 })
 
-minusTenBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+minusTenBtn.addEventListener('click', () => {
     subtractTen();
 })
 
-//use keyboard
+//only keyboard
 document.addEventListener('keydown', (e) => {
     // add or subtract
     if (e.key == '+' || e.key == "ArrowUp") {
@@ -130,6 +126,7 @@ document.addEventListener('keydown', (e) => {
         }
     }
 
+    //reset
     if (e.key == "Backspace") {
         reset();
     }
@@ -156,6 +153,7 @@ instrIcon.addEventListener('mouseleave', () => {
     document.querySelector('body').removeChild(overlay);
 })
 
+// avoid zooming on rapid clicks
 window.addEventListener('dblclick', (e) => {
     e.preventDefault();
 })

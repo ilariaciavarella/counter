@@ -33,6 +33,7 @@ body {
 	align-items: center;
 }
 
+/* Instructions */
 .instrIcon {
 	position: absolute;
 	top: 2rem;
@@ -57,10 +58,6 @@ body {
 	display: none;
 }
 
-.display {
-	display: block;
-}
-
 .instructions li {
 	margin-left: 1rem;
 }
@@ -73,6 +70,7 @@ body {
 	margin-bottom: 0;
 }
 
+/* Counter */
 main {
 	width: 100%;
 	height: 100%;
@@ -139,6 +137,7 @@ main {
 	background-color: var(--click-red);
 }
 
+/* Styles to add with js */
 .overlay {
 	position: absolute;
 	top: 0;
@@ -150,7 +149,11 @@ main {
 	z-index: 0;
 }
 
-/* MOBILE */
+.display {
+	display: block;
+}
+
+/* MEDIA QUERIES FOR SCREEN SIZE */
 @media only screen and (max-width: 400px) {
 	.numbers {
 		font-size: calc(6rem - 24px);
