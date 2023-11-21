@@ -90,6 +90,7 @@ plusBtn.addEventListener('click', (e) => {
 })
 
 minusBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     if (e.shiftKey) {
         subtractTen();
     } else {
@@ -97,16 +98,19 @@ minusBtn.addEventListener('click', (e) => {
     }
 })
 
-resetBtn.addEventListener('click', () => {
+resetBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     reset();
 })
 
 // mobile only buttons
-plusTenBtn.addEventListener('click', () => {
+plusTenBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     addTen();
 })
 
-minusTenBtn.addEventListener('click', () => {
+minusTenBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     subtractTen();
 })
 
