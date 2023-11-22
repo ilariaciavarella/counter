@@ -2,13 +2,15 @@
 
 # Counter
 
-![Static Badge](https://img.shields.io/badge/CLICK%20HERE%20TO%20TRY!-2FB6B2?style=flat-square&color=2FB6B2&link=https%3A%2F%2Filariaciavarella-counter.netlify.app)
+<object> ![Static Badge](https://img.shields.io/badge/CLICK%20HERE%20TO%20TRY!-2FB6B2?style=flat-square&color=2FB6B2&link=https%3A%2F%2Filariaciavarella-counter.netlify.app) </object>
 
 This repository contains the final assignment of Javascript Basics class from the Full Stack Development course of start2impact University.
 
 ## Description
 
 This project consists in a basic web application that allows you to increment, decrement, and reset a counter. It's a great starting point for practising with HTML, CSS, and JavaScript interactions in a web environment.
+
+![Animated gif of counter](assets/img/screen_record.gif)
 
 ### Key Features
 
@@ -84,3 +86,14 @@ If you'd like to contribute to this project, please follow these steps:
 5. Submit a pull request to the original repository.
 
 ## Contact
+
+Nice to meet you, I'm Ilaria!
+
+This is how you can reach out to me:
+
+<object> ![Static Badge](https://img.shields.io/badge/Github-D91254?style=flat-square&label=See%20my%20work%20on&labelColor=1C1719&link=https%3A%2F%2Fgithub.com%2Filariaciavarella) </object>
+
+<object> ![Static Badge](https://img.shields.io/badge/LinkedIn-2FB6B2?style=flat-square&label=Connect%20with%20me%20on&labelColor=1C1719&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Filaria-ciavarella%2F)
+</object>
+
+<object> ![Static Badge](https://img.shields.io/badge/Instagram-D91254?style=flat-square&label=Follow%20me%20on&labelColor=1C1719&link=https%3A%2F%2Fwww.instagram.com%2Flil.ciavarella%2F) </object>
