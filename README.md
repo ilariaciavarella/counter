@@ -2,7 +2,7 @@
 
 # Counter
 
-<object> ![Static Badge](https://img.shields.io/badge/CLICK%20HERE%20TO%20TRY!-2FB6B2?style=flat-square&color=2FB6B2&link=https%3A%2F%2Filariaciavarella-counter.netlify.app) </object>
+[![Website][website-shield]][website-url]
 
 This repository contains the final assignment of Javascript Basics class from the Full Stack Development course of start2impact University.
 
@@ -91,9 +91,19 @@ Nice to meet you, I'm Ilaria!
 
 This is how you can reach out to me:
 
-<object> ![Static Badge](https://img.shields.io/badge/Github-D91254?style=flat-square&label=See%20my%20work%20on&labelColor=1C1719&link=https%3A%2F%2Fgithub.com%2Filariaciavarella) </object>
+[![GitHub][github-shield]][github-url]
 
-<object> ![Static Badge](https://img.shields.io/badge/LinkedIn-2FB6B2?style=flat-square&label=Connect%20with%20me%20on&labelColor=1C1719&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Filaria-ciavarella%2F)
-</object>
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-<img alt="Static Badge" src="https://img.shields.io/badge/Instagram-D91254?style=flat-square&label=Follow%20me%20on&labelColor=1C1719&link=https%3A%2F%2Fwww.instagram.com%2Flil.ciavarella%2F">
+[![Instagram][instagram-shield]][instagram-url]
+
+<!-- LINKS & IMAGES -->
+
+[website-shield]: https://img.shields.io/badge/Click%20here!-2FB6B2?style=for-the-badge&label=Try%20it%20out&labelColor=1C1719
+[website-url]: https://ilariaciavarella-counter.netlify.app
+[github-shield]: https://img.shields.io/badge/GitHub-D91254?style=flat-square&label=See%20my%20work%20on&labelColor=1C1719
+[github-url]: https://github.com/ilariaciavarella
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-2FB6B2?style=flat-square&label=Connect%20with%20me%20on&labelColor=1C1719
+[linkedin-url]: https://www.linkedin.com/in/ilaria-ciavarella/
+[instagram-shield]: https://img.shields.io/badge/Instagram-D91254?style=flat-square&label=Follow%20me%20on&labelColor=1C1719
+[instagram-url]: https://www.instagram.com/lil.ciavarella/
