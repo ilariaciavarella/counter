@@ -1,4 +1,4 @@
-![Hash icon](assets/img/favicon.ico)
+![Hash icon](assets/img/counter-icon.svg)
 
 # Counter
 
