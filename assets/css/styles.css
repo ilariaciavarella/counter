@@ -11,6 +11,8 @@
 
 	--click-blue: #144f4d;
 	--click-red: #8c0c36;
+
+	--disabled: #8bbab9;
 }
 
 *,
@@ -120,6 +122,16 @@ main {
 	transform: translate(8px, 8px);
 	box-shadow: none;
 	transition: 100ms ease-in-out;
+}
+
+.buttons button:disabled {
+	background-color: var(--disabled);
+}
+
+.buttons button:disabled:active {
+	background-color: var(--disabled);
+	box-shadow: var(--lgray) 8px 8px 0;
+	transform: none;
 }
 
 #reset {

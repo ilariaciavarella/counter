@@ -23,6 +23,14 @@ function add() {
     if (count + 1 < 1000) {
         count++;
         updateDisplay();
+        plusBtn.disabled = false;
+        minusBtn.disabled = false;
+        plusTenBtn.disabled = false;
+        minusTenBtn.disabled = false;
+
+    } else {
+        plusBtn.disabled = true;
+        plusTenBtn.disabled = true;
     }
 }
 
@@ -30,14 +38,28 @@ function subtract() {
     if (count - 1 >= 0) {
         count--;
         updateDisplay();
+        plusBtn.disabled = false;
+        minusBtn.disabled = false;
+        plusTenBtn.disabled = false;
+        minusTenBtn.disabled = false;
+
+    } else {
+        minusBtn.disabled = true;
+        minusTenBtn.disabled = true;
     }
 }
 
 function addTen() {
     if (count + 10 < 1000) {
         count += 10;
+        plusBtn.disabled = false;
+        minusBtn.disabled = false;
+        plusTenBtn.disabled = false;
+        minusTenBtn.disabled = false;
     } else {
         count = 999;
+        plusBtn.disabled = true;
+        plusTenBtn.disabled = true;
     }
     updateDisplay();
 }
@@ -45,8 +67,14 @@ function addTen() {
 function subtractTen() {
     if (count - 10 >= 0) {
         count -= 10;
+        plusBtn.disabled = false;
+        minusBtn.disabled = false;
+        plusTenBtn.disabled = false;
+        minusTenBtn.disabled = false;
     } else {
         count = 0;
+        minusBtn.disabled = true;
+        minusTenBtn.disabled = true;
     }
     updateDisplay();
 }
@@ -60,6 +88,10 @@ function updateDisplay() {
 function reset() {
     count = 0;
     updateDisplay();
+    plusBtn.disabled = false;
+    minusBtn.disabled = false;
+    plusTenBtn.disabled = false;
+    minusTenBtn.disabled = false;
 }
 
 
